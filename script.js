@@ -14,15 +14,15 @@ setInterval(function () {
     return `${month}/${date}/${year} ${hour}:${minutes}:${seconds}`;
   }
   
-  // 
+  // unsure what is causing this error
   function updateBackground() {
     var hour = new Date().getHours(), 
       greeting = document.querySelector(".greet"); element class
-    if (hour < 11) {
+    if (hour < 10) {
       
       greeting.innerText = "Good Morning!!"; 
     } else if (hour < 20) {
-     
+    
       greeting.innerText = "Time to get to work"; 
     } else {
       greeting.innerText = "Bed Time!"; 
@@ -32,7 +32,7 @@ setInterval(function () {
       const id = $(this).attr("id");
       const blockHour = parseInt(id.split("-").pop());
       if (blockHour < hour) {
-       
+      
         $(this).find("textarea").addClass("past"); 
         console.log(this);
       } else if (hour === blockHour) {
